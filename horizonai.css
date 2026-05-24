@@ -1,0 +1,525 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
+}
+
+header{
+  padding: 20px 40px;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Hamburger */
+
+.hamburger{
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span{
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px){
+
+  header{
+    padding: 20px;
+  }
+
+  /* SHOW HAMBURGER */
+  .hamburger{
+    display: flex;
+  }
+
+  /* HIDE NORMAL NAV */
+  nav{
+    display: none;
+
+    position: absolute;
+    top: 80px;
+    right: 20px;
+
+    width: 220px;
+
+    background: rgba(5, 8, 22, 0.95);
+
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  nav.active{
+    display: block;
+    animation: slideDown 0.4s ease;
+  }
+
+  nav ul{
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
+
+.logo{
+  color: white;
+  font-style: italic;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  font-weight: bolder;
+}
+
+nav ul li{
+  list-style: none;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: white;
+}
+
+.home{
+  background-image: url(home.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  text-align: center;
+  
+}
+
+
+.home h1{
+  padding-top: 200px;
+  font-size: 4rem;
+  padding-bottom: 40px;
+  color: white;
+
+}
+
+#learn-btn{
+  display: inline-block;
+  padding: 20px;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  font-weight: bolder;
+  background-color: orangered;
+  width: 140px;
+  margin-top: 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.about{
+  background-image: url(about.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  text-align: center;
+  padding: 50px;
+}
+
+.about h2{
+  color: orangered;
+  font-size: 2.5rem;
+  padding: 30px;
+}
+
+.about p{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  font-weight: bolder;
+  font-style: italic;
+  padding-bottom: 20px;
+} 
+
+.services{
+ background:
+     radial-gradient(circle at top left, rgba(0, 140, 255, 0.35), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(0, 60, 255, 0.3), transparent 35%),
+    #050816;
+  min-height: 90vh;
+  text-align: center;
+  padding: 50px; 
+}
+
+.services h2{
+  color: orangered;
+  font-size: 2.5rem;
+  padding: 30px;
+}
+
+.services-cards{
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-evenly;
+  
+}
+
+.services-card{
+  border: 1px solid orangered;
+  border-radius: 20px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.services-card:hover{
+  transform: scale(1.02);
+}
+.services-cards h3{
+  color: orangered;
+  font-style: italic;
+  padding: 20px;
+
+}
+
+.services-cards p{
+  color: cyan;
+  font-style: italic;
+  font-family: cursive;
+  padding: 10px;
+  width: 250px;
+}
+
+.services-cards img{
+  width: 250px;
+  height: 180px;
+  border-radius: 25px;
+}
+
+.btn-learn{
+  padding: 18px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background-color: orangered;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-learn:active{
+  color: orangered;
+  background-color: transparent;
+  border: 1px solid orangered;
+}
+
+/*///Contacts Section///*/
+
+.contacts{
+  background:
+  radial-gradient(circle at top left, rgba(0, 140, 255, 0.25), transparent 35%),
+  radial-gradient(circle at bottom right, rgba(255, 69, 0, 0.15), transparent 35%),
+  #050816;
+
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacts h2{
+  color: orangered;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.contacts form{
+  width: 100%;
+  max-width: 650px;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255, 69, 0, 0.3);
+
+  padding: 40px;
+  border-radius: 25px;
+
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contacts input,
+.contacts textarea{
+  width: 100%;
+  padding: 18px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 15px;
+
+  background: rgba(255,255,255,0.05);
+
+  color: white;
+  font-size: 1rem;
+
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.contacts input::placeholder,
+.contacts textarea::placeholder{
+  color: rgba(255,255,255,0.6);
+  font-style: italic;
+}
+
+.contacts input:focus,
+.contacts textarea:focus{
+  border: 1px solid orangered;
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.4);
+}
+
+.contacts textarea{
+  min-height: 180px;
+  resize: none;
+}
+
+.contacts button{
+  padding: 18px;
+
+  border: none;
+  border-radius: 15px;
+
+  background-color: orangered;
+  color: white;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contacts button:hover{
+  background: transparent;
+  border: 1px solid orangered;
+  color: orangered;
+}
+
+.contacts button:active{
+  transform: scale(0.98);
+}
+
+/*///Footer///*/
+
+footer{
+  background-color: #02040d;
+  color: white;
+
+  text-align: center;
+  padding: 20px;
+
+  font-style: italic;
+}
+
+footer span{
+  color: orangered;
+  font-weight: bold;
+}
+
+
+/*///Responsive///*/
+
+/* Tablets */
+@media (max-width: 992px){
+
+  header{
+    padding: 20px;
+  }
+
+  nav ul{
+    gap: 1rem;
+  }
+
+  .home h1{
+    font-size: 3rem;
+  }
+
+  .services-cards{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .services-card{
+    width: 300px;
+  }
+}
+
+
+/* Mobile Devices */
+@media (max-width: 768px){
+
+  header{
+    padding: 20px;
+    flex-direction: row;
+  }
+
+  .hamburger{
+    display: flex;
+  }
+
+  nav{
+    position: absolute;
+    top: 80px;
+    right: 20px;
+
+    width: 220px;
+
+    background: rgba(5, 8, 22, 0.95);
+
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+
+    padding: 20px;
+
+    display: none;
+  }
+
+  nav ul{
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  nav ul li a{
+    font-size: 1rem;
+  }
+
+  .home{
+    background-attachment: scroll;
+    padding: 20px;
+  }
+
+  .home h1{
+    font-size: 2.5rem;
+    padding-top: 180px;
+  }
+
+  #learn-btn{
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .about{
+    padding: 30px 20px;
+    background-attachment: scroll;
+  }
+
+  .about h2{
+    font-size: 2rem;
+  }
+
+  .about p{
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .services{
+    padding: 30px 20px;
+  }
+
+  .services h2{
+    font-size: 2rem;
+  }
+
+  .services-cards{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-card{
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .services-cards img{
+    width: 100%;
+    height: auto;
+  }
+
+  .services-cards p{
+    width: 100%;
+  }
+
+  .contacts{
+    padding: 60px 15px;
+  }
+
+  .contacts form{
+    padding: 25px 18px;
+  }
+
+  .contacts h2{
+    font-size: 2rem;
+  }
+
+  .contacts input,
+  .contacts textarea{
+    padding: 15px;
+  }
+
+  footer{
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px){
+
+  .home h1{
+    font-size: 2rem;
+  }
+
+  .logo{
+    font-size: 1.5rem;
+  }
+
+  nav ul li a{
+    font-size: 0.95rem;
+  }
+
+  .about p{
+    font-size: 0.9rem;
+  }
+
+  .services-card{
+    padding: 15px;
+  }
+
+  .btn-learn,
+  .contacts button{
+    width: 100%;
+  }
+}
